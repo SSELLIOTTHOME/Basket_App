@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Basket_App.Voucher
 {
-    public class Voucher_Factory : IVoucherFactory
+    public class Voucher_Factory : IVoucher_Factory
     {
         public virtual IVoucher Create_Offer_Voucher(List<Product_Category> Applies_To, decimal discount, string code, string description, decimal? minimumSpend)
         {

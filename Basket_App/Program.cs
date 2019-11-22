@@ -18,10 +18,10 @@ namespace Basket_App
         {
             Console.WriteLine("Basket 1");
             Console.WriteLine("");
-            Product_Factory product_Factory = new Product_Factory();
+            IProduct_Factory product_Factory = new Product_Factory();
             IProduct Hat = product_Factory.Create_Product_Stock_Item(description: "Hat", price:  (decimal)10.50, categories: null);
             IProduct Jumper = product_Factory.Create_Product_Stock_Item(description: "Jumper", price: (decimal)54.65, categories: null);
-            Voucher_Factory factory = new Voucher_Factory();
+            IVoucher_Factory factory = new Voucher_Factory();
             IVoucher off = factory.Create_Gift_Voucher(discount:5, code:  "XXX-XXX",  description: "");
             IBasket Basket = new Basket();
             Basket.Add_To_Basket(Hat, 1);            
@@ -36,10 +36,10 @@ namespace Basket_App
         {
             Console.WriteLine("Basket 2");
             Console.WriteLine("");
-            Product_Factory product_Factory = new Product_Factory();
+            IProduct_Factory product_Factory = new Product_Factory();
             IProduct Hat = product_Factory.Create_Product_Stock_Item(description: "Hat",price:  (decimal)25, categories: null);
             IProduct Jumper = product_Factory.Create_Product_Stock_Item(description: "Jumper", price: (decimal)26, categories: null);
-            Voucher_Factory factory = new Voucher_Factory();
+            IVoucher_Factory factory = new Voucher_Factory();
             IVoucher off = factory.Create_Offer_Voucher(Applies_To: new List<Product_Category>() { Product_Category.Head_Gear }, discount:5, code: "YYY-YYY", description: "£5.00 off Head Gear in baskets over £50.00", minimumSpend: 50);
             IBasket Basket = new Basket();
             Basket.Add_To_Basket(Hat, 1);
@@ -56,7 +56,7 @@ namespace Basket_App
             IProduct Hat = Product_Factory.Create_Product_Stock_Item(description: "Hat",price: (decimal)25, categories: null);
             IProduct Jumper = Product_Factory.Create_Product_Stock_Item(description: "Jumper", price: (decimal)26, categories: null);
             IProduct Head_Light = Product_Factory.Create_Product_Stock_Item(description: "Head Light", price: (decimal)3.50, categories: new List<Product_Category>() { Product_Category.Head_Gear });
-            Voucher_Factory Factory = new Voucher_Factory();
+            IVoucher_Factory Factory = new Voucher_Factory();
             IVoucher off = Factory.Create_Offer_Voucher(Applies_To: new List<Product_Category>() { Product_Category.Head_Gear }, discount: 5, code: "XXX-XXX", description: "£5.00 off Head Gear in baskets over £50.00", minimumSpend : null);
             IBasket basket = new Basket();
             basket.Add_To_Basket(Hat, 1);
@@ -74,8 +74,8 @@ namespace Basket_App
             Product_Factory Product_Factory = new Product_Factory();
             IProduct Hat = Product_Factory.Create_Product_Stock_Item(description: "Hat", price: (decimal)25, categories: null);
             IProduct Jumper = Product_Factory.Create_Product_Stock_Item(description: "Jumper", price: (decimal)26, categories: null);
-            
-            Voucher_Factory factory = new Voucher_Factory();
+
+            IVoucher_Factory factory = new Voucher_Factory();
             IVoucher Gift_Voucher = factory.Create_Gift_Voucher(discount: 5, code: "YYY-YYY", description: "");
             IVoucher Offer_Voucher = factory.Create_Offer_Voucher(Applies_To: null , discount: 5, code: "XXX-XXX", description: "£5.00 off baskets over £50.00", minimumSpend: 50);
 
@@ -96,7 +96,7 @@ namespace Basket_App
             Product_Factory product_Factory = new Product_Factory();
             IProduct Hat = product_Factory.Create_Product_Stock_Item(description: "Hat", price: (decimal)25, categories: null);
             IProduct Voucher = product_Factory.Create_Product_Voucher(description: "£30.00 Gift Voucher", price: (decimal)30);
-            Voucher_Factory factory = new Voucher_Factory();
+            IVoucher_Factory factory = new Voucher_Factory();
             IVoucher off = factory.Create_Offer_Voucher(null, 5, "YYY-YYY", "£5.00 off baskets over £50.00", 50);
             IBasket Basket = new Basket();
             Basket.Add_To_Basket(product: Hat, Quantity: 1);
