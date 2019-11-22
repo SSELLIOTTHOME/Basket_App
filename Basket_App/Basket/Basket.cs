@@ -49,7 +49,7 @@ namespace Basket_App
             Missing_Spend = null;
 
             //First part of calculation is to sum all of the items and subtract general gift vouchers
-            var runningTotal = Basket_Items.Where(o => o.Product is Product_Stock_Item).Sum(o => o.Product.Price );
+            decimal runningTotal = Basket_Items.Where(o => o.Product is Product_Stock_Item).Sum(o => o.Product.Price );
             var originalTotal = runningTotal;
 
             Vouchers.Where<IVoucher>(o => o is GiftVoucher).ToList().ForEach(o => o.Calculate_Voucher_Discounts(ref runningTotal, this.Basket_Items));
