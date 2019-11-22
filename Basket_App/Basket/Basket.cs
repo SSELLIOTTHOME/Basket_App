@@ -117,7 +117,7 @@ namespace Basket_App
         const string Item_String = "{0} {1} @ {2} each";
         const string No_Voucher_String = "There are no products in your basket applicable to voucher Voucher {0}";
         const string Threashold_Message = "You have not reached the spend threshold for voucher {0}. Spend another {1} to receive {2} discount from your basket total";
-        const string Offer_Voucher_Applied = "{0} x {1} Offer Voucher {2} {3} applied";
+        const string Offer_Voucher_Applied = "{0} x {1} Offer Voucher {2} applied";
         const string Gift_Voucher_Applied =  "{0} x {1} Gift Voucher {2} Applied";
 
 
@@ -142,7 +142,7 @@ namespace Basket_App
                 if (voucher is OfferVoucher)
                 {
 
-                    stringBuilder.AppendLine(String.Format(Offer_Voucher_Applied, "1", voucher.Discount.ToString("C"), voucher.Description, voucher.Voucher_Code));
+                    stringBuilder.AppendLine(String.Format(Offer_Voucher_Applied, "1", voucher.Description, voucher.Voucher_Code));
                 }
                 else
                 {
