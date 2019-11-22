@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Basket_App.Voucher;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Basket_App.Product
+namespace Basket_App.Products
 {
     public class Product_Stock_Item : Product
     {

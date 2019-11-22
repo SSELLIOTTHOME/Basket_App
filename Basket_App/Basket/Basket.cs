@@ -1,5 +1,6 @@
-﻿using Basket_App.Basket_Item;
-using Basket_App.Product;
+﻿using Basket_App.Basket_Items;
+using Basket_App.Products;
+using Basket_App.Voucher;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace Basket_App
+namespace Basket_App.Baskets
 {
 
     public enum Voucher_Failure_Reason
@@ -84,7 +85,7 @@ namespace Basket_App
         public bool Add_To_Basket(IProduct product, decimal Quantity)
         {
 
-            Basket_Items.Add(new Basket_Item.Basket_Item(product, Quantity));
+            Basket_Items.Add(new Basket_Items.Basket_Item(product, Quantity));
 
             return true;
         }

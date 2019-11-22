@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Basket_App.Product
+namespace Basket_App.Products
 {
     public abstract class Product : IProduct
     {

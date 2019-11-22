@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Basket_App.Products
 {
-    public class Product_Voucher : Product
+    public enum Product_Category
     {
-        public Product_Voucher(string description, decimal price) : base(description, price)
-        {
+        Head_Gear = 0,
+        Trousers = 1,
+        Shoes = 2
 
-        }
 
     }
 }

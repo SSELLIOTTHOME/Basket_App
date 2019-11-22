@@ -1,22 +1,16 @@
-﻿using Basket_App.Basket_Item;
-using Basket_App.Product;
+﻿using Basket_App.Baskets;
+using Basket_App.Basket_Items;
+using Basket_App.Products;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Basket_App
+namespace Basket_App.Voucher
 {
     //Acceptable for simple applicaion such as this, but in reality this would be a lookup table from a  database
-    public enum Product_Category
-    {
-        Head_Gear = 0, 
-        Trousers = 1,
-        Shoes = 2
 
-
-    }
 
     public class GiftVoucher : IVoucher
     {
@@ -31,7 +25,7 @@ namespace Basket_App
 
         
 
-        public bool ApplyVoucher(IBasket basket)
+        public bool ApplyVoucher(Baskets.IBasket basket)
         {
             basket.Apply_Voucher(this);
             return true;
@@ -79,7 +73,7 @@ namespace Basket_App
             this.Required_Spend = required_Spend;
         }
 
-        public Voucher_Failure_Result? Calculate_Voucher_Discounts(ref decimal runningTotal, List<IBasket_Item> Basket_Items )
+        public Baskets.Voucher_Failure_Result? Calculate_Voucher_Discounts(ref decimal runningTotal, List<IBasket_Item> Basket_Items )
         {
 
                 var originalTotal = Basket_Items.Sum(o => o.Price);
@@ -110,7 +104,7 @@ namespace Basket_App
                 if (discountToApply == 0)
                 {
                     //Return error
-                    return  new Voucher_Failure_Result() { Reason = Voucher_Failure_Reason.Incorrect_Category, Voucher = this };
+                    return  new Baskets.Voucher_Failure_Result() { Reason = Baskets.Voucher_Failure_Reason.Incorrect_Category, Voucher = this };
                 }
                 else
                 {
@@ -124,7 +118,7 @@ namespace Basket_App
                     {
                         //Return Error & calculate missing spend
                         
-                        return new Voucher_Failure_Result() { Reason = Voucher_Failure_Reason.Insufficent_Spend, Voucher = this, Difference = (this.Required_Spend - sumofItemsThatApplyToVoucher) +(decimal)0.01 };
+                        return new Baskets.Voucher_Failure_Result() { Reason = Baskets.Voucher_Failure_Reason.Insufficent_Spend, Voucher = this, Difference = (this.Required_Spend - sumofItemsThatApplyToVoucher) +(decimal)0.01 };
                     }
                 }
             return null;

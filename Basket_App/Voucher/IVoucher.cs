@@ -1,4 +1,4 @@
-﻿using Basket_App.Basket_Item;
+﻿using Basket_App.Basket_Items;
 using System.Collections.Generic;
 
 namespace Basket_App
@@ -11,6 +11,6 @@ namespace Basket_App
 
         string Description { get; set; }
 
-        Voucher_Failure_Result? Calculate_Voucher_Discounts(ref decimal runningTotal, List<IBasket_Item> Basket_Items);
+        Baskets.Voucher_Failure_Result? Calculate_Voucher_Discounts(ref decimal runningTotal, List<IBasket_Item> Basket_Items);
     }
 }

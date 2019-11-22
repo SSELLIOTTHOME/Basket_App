@@ -1,7 +1,8 @@
-﻿using Basket_App.Basket_Item;
+﻿using Basket_App.Basket_Items;
+using Basket_App.Products;
 using System.Collections.Generic;
 
-namespace Basket_App
+namespace Basket_App.Baskets
 {
     public interface IBasket
     {

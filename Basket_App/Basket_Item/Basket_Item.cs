@@ -1,4 +1,6 @@
-﻿namespace Basket_App.Basket_Item
+﻿using Basket_App.Products;
+
+namespace Basket_App.Basket_Items
 {
     //Represents an Item in the Order Basket
     public class Basket_Item : IBasket_Item

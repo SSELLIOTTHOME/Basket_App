@@ -1,4 +1,6 @@
-﻿namespace Basket_App.Basket_Item
+﻿using Basket_App.Products;
+
+namespace Basket_App.Basket_Items
 {
     public interface IBasket_Item
     {

@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using Basket_App;
-using Basket_App.Basket_Item;
-using Basket_App.Product;
+using Basket_App.Basket_Items;
+using Basket_App.Products;
 using Basket_App.Voucher;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
+using Basket_App.Baskets;
 
 namespace Basket_App_Unit_Tests
 {

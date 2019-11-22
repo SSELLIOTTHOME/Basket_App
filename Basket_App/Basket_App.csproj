@@ -47,6 +47,7 @@
     <Compile Include="Basket\IBasket.cs" />
     <Compile Include="Basket_Item\Basket_Item.cs" />
     <Compile Include="Basket_Item\IBasket_Item.cs" />
+    <Compile Include="Product\Product_Category.cs" />
     <Compile Include="Product\Product_Stock_Item.cs" />
     <Compile Include="Product\IProduct.cs" />
     <Compile Include="Product\IProductFactory.cs" />

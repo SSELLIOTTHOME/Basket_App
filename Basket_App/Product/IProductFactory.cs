@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using Basket_App.Voucher;
+using System.Collections.Generic;
 
-namespace Basket_App.Product
+namespace Basket_App.Products
 {
     public interface IProduct_Factory
     {

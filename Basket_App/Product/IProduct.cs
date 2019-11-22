@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Basket_App
+namespace Basket_App.Products
 {
     public interface IProduct
     {

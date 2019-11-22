@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Basket_App;
+using Basket_App.Products;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 
@@ -15,7 +16,7 @@ namespace Basket_App.Unit_Tests
         [TestMethod]
         public void Test_Inserting_Voucher_Adds_To_Voucher_List()
         {
-            Basket b = new Basket();
+            var b = new Basket_App.Baskets.Basket();
             var mock = new Mock<IVoucher>();
             mock.SetupSet(o => o.Voucher_Code = "xxxx-xxxx");
             b.Apply_Voucher(mock.Object);
@@ -27,7 +28,7 @@ namespace Basket_App.Unit_Tests
         [TestMethod]
         public void Test_Inserting_Product_Adds_To_Basket()
         {
-            Basket b = new Basket();
+            var b = new Basket_App.Baskets.Basket();
             var mock = new Mock<IProduct>();
             mock.SetupGet(o => o.Description).Returns("Trousers");
             mock.SetupSet(o => o.Price = (decimal)4.99);
@@ -40,7 +41,7 @@ namespace Basket_App.Unit_Tests
         [TestMethod]
         public void Test_No_Duplicate_Codes_Allowed()
         {
-            Basket b = new Basket();
+            var b = new Basket_App.Baskets.Basket();
             var mock = new Mock<IVoucher>();
             mock.SetupGet(o => o.Voucher_Code).Returns("xxxx-xxxx");
             var result = b.Apply_Voucher(mock.Object);
